@@ -37,15 +37,21 @@ public class ArrayUtil {
         System.out.println("final for");
     }
 
-    public int[] resizeArray(int[] arr, int capacity){
+    public void resizeArray(int[] arr, int capacity) {
         int[] temp = new int[capacity];
 
         for (int i = 0; i < arr.length; i++) {
             temp[i] = arr[i];
         }
 
-        return temp;
+        arr[0] = 100;
+
+//        arr = temp;
+//        return temp;
     }
+
+    int[] arr2 = {1, 2, 34};
+//    arr2={2,}
 
     public static void main(String[] args) {
 //        ArrayUtil arrayUtil = new ArrayUtil();
@@ -53,8 +59,12 @@ public class ArrayUtil {
 //        arrayUtil.arrayDemo();
 
         ArrayUtil arrayUtil = new ArrayUtil();
-        arrayUtil.printArray2(new int[] {1, 2, 13, 9, 5});
+        arrayUtil.printArray2(new int[]{1, 2, 13, 9, 5});
 
+        int[] sampleArr = new int[]{1, 2, 3};
+        arrayUtil.resizeArray(sampleArr, 10);
+
+        System.out.println(sampleArr[0]);
 
     }
 }
